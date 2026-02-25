@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShelfLife Plus</title>
+</head>
+<body>
+
+<h1>ShelfLife Plus Inventory</h1>
+<button onclick="testConnection()">Test Supabase</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const { createClient } = supabase;
+
+  const supabaseClient = createClient(
+    "https://ohkdzpnhrrkfdgqdmixc.supabase.co",
+    "sb_publishable_yNRjBuwLIBdnOmILJj3opQ_UkOV_xAU"
+  );
+
+  async function testConnection() {
+    const { data, error } = await supabaseClient
+      .from('products')
+      .select('*');
+
+    if (error) {
+      alert("Error: " + error.message);
+    } else {
+      alert("Connected! Rows: " + data.length);
+    }
+  }
+</script>
+
+</body>
+</html>
