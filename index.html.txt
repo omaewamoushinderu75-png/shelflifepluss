@@ -14,8 +14,7 @@
 
   const supabaseClient = createClient(
     "https://ohkdzpnhrrkfdgqdmixc.supabase.co",
-    "sb_publishable_yNRjBuwLIBdnOmILJj3opQ_UkOV_xAU"
-  );
+    "sb_publishable_yNRjBuwLIBdnOmILJj3opQ_UkOV_xAU");
 
   async function testConnection() {
     const { data, error } = await supabaseClient
